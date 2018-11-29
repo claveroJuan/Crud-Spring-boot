@@ -1,0 +1,16 @@
+.error{
+    color: red;
+    font-size: 15px;
+}
+.user{
+    color: #408080;
+    font-size: 15px;
+}
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #0000ff;
+}
+

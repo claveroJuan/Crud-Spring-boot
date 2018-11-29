@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lista de Estudiantes </title>
+        
+         <link rel="stylesheet" th:href="@{/css/custom.css}"/>
+          <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+
+<body>
+<h1 align="center">Estudiantes Registrados</h1>
+<table id="t02"  cellpadding="2">
+<tr>
+<th>
+<a  href="/agregar"><h2>Home Page:Nuevo Registro de Estudiante</h2></a>
+
+</th>
+
+<th>
+
+<a  align ="right" href="/delete"><h2>Eliminar Registros de Estudiantes</h2></a>
+</th>
+</tr>
+</table>
+<table >
+
+
+</table>
+   
+<form:form>
+<table id="t01" border="2" width="70%" cellpadding="2">
+<tr><th>Id</th><th>Nombre</th><th>Apellido</th>
+<th>Sexo</th><th>Ultima Modificacion</th>
+<th>Email</th><th>Seccion</th><th>Pais</th>
+<th>Editar</th><th>Eliminar</th></tr>  
+
+   
+    <tr th:each="student : ${list}"> 
+   <td th:text="${student.id}"></td>  
+   <td th:text="${student.firstName}"></td> 
+   <td th:text="${student.lastName}"></td>  
+   <td th:text="${student.sex}"></td> 
+   <td th:text="${student.createdAt}"></td>  
+   <td th:text="${student.email}"></td> 
+   <td th:text="${student.section}"></td> 
+   <td th:text="${student.country}"></td>  
+   
+   
+   <td><a th:href="@{'/editstudent/' + ${student.id}}">Editar</a></td>  
+   <td><a th:href="@{'/deletestudent/' + ${student.id}}">Eliminar</a></td>  
+   </tr>  
+  
+   
+   
+   </table>  
+   <br/>
+   
+  
+   </form:form>
+</body>
+</html>
